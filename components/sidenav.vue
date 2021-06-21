@@ -195,8 +195,6 @@ body {
   color: var(--primary-color);
 }
 
-.jover {
-}
 .space-y {
   margin-top: 8rem;
 }
