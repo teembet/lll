@@ -61,14 +61,16 @@
           Pay Bills
         </router-link>
       </li>
-      <div @click="Logout" class="jover space-y logout">
-        <img
-          style="width:17px;margin-right:18px"
-          src="../assets/images/bills.svg"
-          class="img-fluid"
-        />
-        Log Out
-      </div>
+      <li @click="Logout" class="jover" style="margin-top:8rem !important">
+        <a>
+          <img
+            style="width:17px;margin-right:18px"
+            src="../assets/images/logout.svg"
+            class="img-fluid"
+          />
+          Log Out
+        </a>
+      </li>
     </ul>
   </div>
 </template>

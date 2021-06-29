@@ -8,9 +8,13 @@
       v-if="status"
     />
     <div class="col-lg-5 card">
-    
+      <div class="" style="margin:20px">
+        <button class="back-btn" @click="close">
+          <i class="fa fa-chevron-left"></i> Go Back
+        </button>
+      </div>
       <form @submit.prevent="sendRequest">
-        <h5 class="center card-head bold-text">Airtime Recharge</h5>
+        <h5 class="center card-head bold-text">{{ msg ? msg : "cable" }}</h5>
         <div class=" ">
           <div class="col">
             <label class="formlabel" for="formGroupExampleInput">Amount</label>
@@ -75,24 +79,27 @@
 
         <div class="center mt-5" style="padding:20px">
           <button type="submit" class="action-btn">
-            Buy Airtime
+            Procced
           </button>
         </div>
       </form>
     </div>
   </div>
 </template>
-
 <script>
 import Loader from "@/components/loader.vue";
 import axios from "@/plugins/axios";
 import Status from "@/components/status";
 export default {
-  name: "airtime",
+  name: "databundle",
   components: {
     Loader,
     Status
   },
+   props: {
+    msg: String
+  },
+  
   data() {
     return {
       show: Boolean,
@@ -130,6 +137,10 @@ export default {
   methods: {
     resetState() {
       this.status = false;
+    },
+    close() {
+      this.$modal.hideAll();
+      console.log("calling");
     },
     async runAirtel(formData, local_token) {
       try {
@@ -303,102 +314,8 @@ export default {
           this.run9mobile(formData, local_token);
           break;
       }
-    },
-  
+    }
   }
 };
 </script>
-<style>
-input,
-select::placeholder {
-  font-size: 11px;
-}
-.modal-backdrop {
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background-color: rgba(0, 0, 0, 0.3);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
 
-.modal {
-  background: #ffffff;
-  box-shadow: 2px 2px 20px 1px;
-
-  display: flex;
-  flex-direction: column;
-}
-
-.modal-header,
-.modal-footer {
-  padding: 15px;
-  display: flex;
-}
-
-.modal-header {
-  position: relative;
-  border-bottom: 1px solid #eeeeee;
-  color: #4aae9b;
-  justify-content: space-between;
-}
-
-.modal-footer {
-  border-top: 1px solid #eeeeee;
-  flex-direction: column;
-}
-
-.modal-body {
-  position: relative;
-  padding: 20px 10px;
-}
-
-.btn-close {
-  position: absolute;
-  top: 0;
-  right: 0;
-  border: none;
-  font-size: 20px;
-  padding: 10px;
-  cursor: pointer;
-  font-weight: bold;
-  color: #4aae9b;
-  background: transparent;
-}
-
-.btn-green {
-  color: white;
-  background: #4aae9b;
-  border: 1px solid #4aae9b;
-  border-radius: 2px;
-}
-
-.modal-fade-enter,
-.modal-fade-leave-to {
-  opacity: 0;
-}
-
-.modal-fade-enter-active,
-.modal-fade-leave-active {
-  transition: opacity 0.5s ease;
-}
-
-.card {
-  box-shadow: 0px 3px 15px #00000024;
-  background: var(--body-color);
-}
-.action-btn {
-  background-color: var(--primary-color);
-  color: var(--white-color);
-  border-radius: 9px;
-  height: 52px;
-  width: 247px;
-}
-.card-head {
-  color: var(--primary-color);
-  padding: 20px;
-}
-</style>

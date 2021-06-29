@@ -3,7 +3,6 @@ import axios from "axios";
 export default (history = null) => {
   const baseURL = process.env.BASE_URL;
 
-
   let headers = {};
 
   if (localStorage.token) {
@@ -12,15 +11,15 @@ export default (history = null) => {
 
   const axiosInstance = axios.create({
     baseURL: baseURL,
-    headers,
+    headers
   });
 
   axiosInstance.interceptors.response.use(
-    (response) =>
+    response =>
       new Promise((resolve, reject) => {
         resolve(response);
       }),
-    (error) => {
+    error => {
       if (!error.response) {
         return new Promise((resolve, reject) => {
           reject(error);
@@ -31,11 +30,11 @@ export default (history = null) => {
         localStorage.removeItem("token");
         localStorage.removeItem("user");
         if (history) {
-            window.location = "/";
-          console.log('win')
+          window.location = "/";
+          console.log("win");
         } else {
           window.location = "/";
-          console.log('lose')
+          console.log("lose");
         }
       } else {
         return new Promise((resolve, reject) => {

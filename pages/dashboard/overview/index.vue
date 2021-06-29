@@ -3,13 +3,15 @@
     <!-- <button type="button" class="btn" @click="showModal">
       Open Modal!
     </button> -->
+    <payment-card v-show="isModalVisible" @close="closeModal" />
 
-    <modal v-show="isModalVisible" @close="closeModal" />
     <div class="row">
       <div class="col-lg-5">
         <div class="card-top" style="margin-bottom:20px;">
           <span class="wallet-head">My Wallet</span>
-          <button class="fund">Fund Wallet</button>
+          <nuxt-link tag="button" to="/dashboard/send-money" class="fund"
+            >Fund Wallet</nuxt-link
+          >
         </div>
         <div class="img-container" style="display:flex;align-items:center;">
           <img
@@ -242,10 +244,12 @@ import axios from "axios";
 import { mapGetters } from "vuex";
 import { preventOverflow } from "@popperjs/core";
 import global from "../global.js";
+import paymentcard from "@/components/payment-card";
 export default {
   name: "home",
   components: {
-    modal
+    modal,
+    paymentcard
   },
   mixins: [global],
   data() {
@@ -262,6 +266,15 @@ export default {
   mounted() {
     if (process.client) {
       return this.$store.dispatch("getUser");
+    }
+  },
+  methods: {
+    fundwallet() {
+      this.isModalVisible = true;
+      console.log("great");
+    },
+    closeModal() {
+      this.isModalVisible = false;
     }
   }
 };

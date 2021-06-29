@@ -81,14 +81,16 @@ export default {
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
     { src: "~plugins/toast.js", mode: "client" },
-    { src: "plugins/owl.js", ssr: false }
+    { src: "plugins/owl.js", ssr: false },
+    { src: "plugins/crypto.js", mode: "client" },
+    { src: "plugins/vue-js-modal.js", mode: "client" }
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
-  buildModules: ["@nuxtjs/dotenv"],
+  buildModules: ["@nuxtjs/dotenv", "@nuxtjs/pwa"],
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
@@ -100,8 +102,5 @@ export default {
   axios: {},
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
-  build: {},
-  env: {
-    BASE_URL: "http://52.149.222.131:5009/api/v1/"
-  }
+  build: {}
 };

@@ -6,7 +6,7 @@
         <!-- Left elements -->
         <div class="d-flex">
           <!-- Brand -->
-          <nuxt-link class="navbar-brand" to="/dashboard">
+          <nuxt-link class="navbar-brand" to="/dashboard/overview">
             <img
               src="../assets/images/paysure.png"
               class="img-fluid"
@@ -113,8 +113,8 @@ export default {
       if (aside) {
         aside.classList.toggle("toggled");
       }
-    },
-  },
+    }
+  }
 };
 </script>
 

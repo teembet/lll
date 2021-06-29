@@ -1,6 +1,7 @@
 <template>
   <div style="padding:20px">
     <dashboard-nav></dashboard-nav>
+
     <div id="wrapper">
       <sidenav></sidenav>
 
@@ -10,7 +11,7 @@
         <div class="container-fluid">
           <div class="row">
             <div class="col-lg-12">
-               <Nuxt />
+              <Nuxt />
             </div>
           </div>
         </div>
@@ -27,7 +28,7 @@ export default {
   name: "dashboard",
   components: {
     dashboardNav,
-    sidenav,
+    sidenav
     // modal,
   },
   methods: {
@@ -36,8 +37,8 @@ export default {
       if (aside) {
         aside.classList.toggle("toggled");
       }
-    },
-  },
+    }
+  }
 };
 </script>
 
@@ -89,6 +90,7 @@ body {
   width: 100%;
   position: absolute;
   background: var(--body-color);
+
   /* padding: 15px; */
 }
 
@@ -117,6 +119,9 @@ body {
   #page-content-wrapper {
     padding: 20px;
     position: relative;
+    left: 50px;
+    transform: translate(-50px, 50px);
+    top: 50px;
   }
 
   #wrapper.toggled #page-content-wrapper {
