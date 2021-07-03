@@ -25,6 +25,7 @@ import dashboardNav from "@/components/dashboardNav";
 import sidenav from "@/components/sidenav";
 // import modal from "@/components/modal";
 export default {
+  // middleware: "auth",
   name: "dashboard",
   components: {
     dashboardNav,
@@ -89,7 +90,10 @@ body {
 #page-content-wrapper {
   width: 100%;
   position: absolute;
-  background: var(--body-color);
+  /* background-image: url("../assets/images/airtimebkg.png");
+  background-size: cover;
+  background-repeat: no-repeat; */
+  background-color: var(--body-color);
 
   /* padding: 15px; */
 }
@@ -119,9 +123,9 @@ body {
   #page-content-wrapper {
     padding: 20px;
     position: relative;
-    left: 50px;
+    /* left: 50px;
     transform: translate(-50px, 50px);
-    top: 50px;
+    top: 50px; */
   }
 
   #wrapper.toggled #page-content-wrapper {

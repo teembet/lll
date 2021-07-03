@@ -14,8 +14,46 @@
         </button>
       </div>
       <form @submit.prevent="sendRequest">
-        <h5 class="center card-head bold-text">{{ msg ? msg : "cable" }}</h5>
+        <h5 class="center card-head bold-text">
+          {{ msg ? msg : "cable" }}
+          <img
+            class="img-fluid ml-4 icon"
+            :src="require(`../../../../assets/images/${img}`)"
+          />
+        </h5>
+
         <div class=" ">
+          <div class="col">
+            <label class="formlabel" for="formGroupExampleInput"
+              >Phone Number</label
+            >
+            <input
+              type="text"
+              class="form-control"
+              id="formGroupExampleInput"
+              placeholder=""
+              v-model="form.beneficiaryNumber"
+              @blur="bankLookup"
+              autocomplete="off"
+              required
+            />
+          </div>
+
+          <div class="col">
+            <label class="formlabel" for="formGroupExampleInput"
+              >Beneficiary Name</label
+            >
+            <input
+              type="text"
+              class="form-control"
+              id="formGroupExampleInput"
+              placeholder=""
+              autocomplete="off"
+              v-model="form.beneficiaryName"
+              disabled
+              required
+            />
+          </div>
           <div class="col">
             <label class="formlabel" for="formGroupExampleInput">Amount</label>
             <input
@@ -30,7 +68,7 @@
           </div>
         </div>
         <div class=" ">
-          <div class="col">
+          <!-- <div class="col">
             <label class="formlabel" for="formGroupExampleInput"
               >Select Network</label
             >
@@ -47,20 +85,7 @@
                 >{{ item.name }}</option
               >
             </select>
-          </div>
-          <div class="col">
-            <label class="formlabel" for="formGroupExampleInput"
-              >Phone Number</label
-            >
-            <input
-              type="text"
-              class="form-control"
-              id="formGroupExampleInput"
-              placeholder=""
-              v-model="form.beneficiaryNumber"
-              required
-            />
-          </div>
+          </div> -->
 
           <div class="col">
             <label class="formlabel" for="formGroupExampleInput"
@@ -98,9 +123,10 @@ export default {
     Status
   },
   props: {
-    msg: String
+    msg: String,
+    img: String
   },
-  
+
   data() {
     return {
       show: Boolean,
@@ -109,25 +135,7 @@ export default {
       state: null,
       message: null,
       user: "",
-      network: "",
-      networks: [
-        {
-          id: 1,
-          name: "Airtel"
-        },
-        {
-          id: 2,
-          name: "Glo"
-        },
-        {
-          id: 3,
-          name: "Mtn"
-        },
-        {
-          id: 4,
-          name: "9mobile"
-        }
-      ],
+
       form: {
         amount: "",
         beneficiaryNumber: "",
@@ -142,6 +150,48 @@ export default {
     close() {
       this.$modal.hideAll();
       console.log("calling");
+    },
+    async accLookup() {
+      const formData = {
+        bankCode: this.form.beneficiaryBankCode,
+        accountNumber: this.form.beneficiaryAccountNumber,
+        amount: this.form.amount
+      };
+      try {
+        this.loader = true;
+        const response = await axios().post(
+          process.env.BASE_URL + "paysure/lookup/transfers/accountlookup",
+          formData,
+          {
+            headers: {
+              Authorization: `Bearer ${JSON.parse(this.getUser).token}`
+            }
+          }
+        );
+        if (response.data.responseCode === 0) {
+          this.loader = false;
+          this.form.beneficiaryName = response.data.data.accountName;
+        } else {
+          this.loader = false;
+          this.$toast.open({
+            message: `<p style="color:white;">Invalid Account Number</p>`,
+            type: "error",
+            duration: 5000,
+            dismissible: true,
+            position: "top-right"
+          });
+        }
+      } catch (error) {
+        console.log(error);
+        this.loader = false;
+        this.$toast.open({
+          message: `<p style="color:white;">${error}</p>`,
+          type: "error",
+          duration: 5000,
+          dismissible: true,
+          position: "top-right"
+        });
+      }
     },
     async runAirtel(formData, local_token) {
       try {

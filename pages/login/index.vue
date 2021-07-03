@@ -96,8 +96,10 @@
 <script>
 import Loader from "@/components/loader.vue";
 import axios from "@/plugins/axios";
+
 export default {
-  name: "signUp",
+  // middleware: "guest",
+  name: "signIn",
   components: {
     Loader
   },

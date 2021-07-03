@@ -175,7 +175,7 @@ export default {
 };
 </script>
 <style>
-.home {
+/* .home {
   position: fixed;
   top: 0;
   bottom: 0;
@@ -185,7 +185,7 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
-}
+} */
 
 .modal {
   background: #ffffff;

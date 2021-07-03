@@ -20,12 +20,14 @@
           />
           <div class="center-text">Total Balance</div>
           <div class="center-text2">N{{ balance }}</div>
-          <div class="center-text3">{{ JSON.parse(getUser).username }}</div>
+          <div class="center-text3">Wallet Id</div>
+          <div class="center-text4">{{ JSON.parse(getUser).walletId }}</div>
+          <div class="center-text5">{{ JSON.parse(getUser).username }}</div>
         </div>
         <div class="app-divider"></div>
         <div class="wallet-head">
           <p>Frequent Payment</p>
-          <div>
+          <!-- <div>
             <span class="small-text primary-text mt-5">Send Money</span>
             <div class="d-flex">
               <div class="mt-3">
@@ -81,60 +83,54 @@
                 </div>
               </div>
             </div>
-          </div>
+          </div> -->
           <div class="mt-3">
             <span class="small-text primary-text mt-5">Pay Bills</span>
             <div class="d-flex">
               <div class="mt-3">
                 <div class="icon">
                   <img
-                    src="../../../assets/images/profile.png"
+                    src="../../../assets/images/dstv.png"
+                    class="img-fluid"
+                  />
+                </div>
+                <div class=" mt-2">
+                  <span class="small-text" style="font-weight:400;">Dstv</span>
+                </div>
+              </div>
+              <div class="ml-5 mt-3">
+                <div class="icon">
+                  <img
+                    src="../../../assets/images/gotv.png"
+                    class="img-fluid"
+                  />
+                </div>
+                <div class=" mt-2">
+                  <span class="small-text" style="font-weight:400;">GoTV</span>
+                </div>
+              </div>
+              <div class="ml-5 mt-3">
+                <div class="icon">
+                  <img
+                    src="../../../assets/images/spectranet.png"
                     class="img-fluid"
                   />
                 </div>
                 <div class=" mt-2">
                   <span class="small-text" style="font-weight:400;"
-                    >Taylor Clark</span
+                    >Spectranet</span
                   >
                 </div>
               </div>
               <div class="ml-5 mt-3">
                 <div class="icon">
                   <img
-                    src="../../../assets/images/profile.png"
+                    src="../../../assets/images/smile.png"
                     class="img-fluid"
                   />
                 </div>
                 <div class=" mt-2">
-                  <span class="small-text" style="font-weight:400;"
-                    >Taylor Clark</span
-                  >
-                </div>
-              </div>
-              <div class="ml-5 mt-3">
-                <div class="icon">
-                  <img
-                    src="../../../assets/images/profile.png"
-                    class="img-fluid"
-                  />
-                </div>
-                <div class=" mt-2">
-                  <span class="small-text" style="font-weight:400;"
-                    >Taylor Clark</span
-                  >
-                </div>
-              </div>
-              <div class="ml-5 mt-3">
-                <div class="icon">
-                  <img
-                    src="../../../assets/images/profile.png"
-                    class="img-fluid"
-                  />
-                </div>
-                <div class=" mt-2">
-                  <span class="small-text" style="font-weight:400;"
-                    >Taylor Clark</span
-                  >
+                  <span class="small-text" style="font-weight:400;">Smile</span>
                 </div>
               </div>
             </div>
@@ -317,23 +313,44 @@ export default {
   /* transform: translate(-30%, -13%); */
   font-size: var(--smaller-font-size);
   opacity: 0.9;
+  font-weight: 400;
 }
 .center-text2 {
   position: absolute;
-  top: 40%;
+  top: 38%;
   left: 4%;
   /* transform: translate(-40%, -23%); */
   font-size: var(--h1-font-size);
   opacity: 0.9;
+  font-weight: bold;
 }
 
 .center-text3 {
   position: absolute;
-  top: 80%;
+  top: 65%;
+  left: 5%;
+  /* transform: translate(-80%, -29%); */
+  opacity: 0.9;
+  font-size: var(--smaller-font-size);
+  font-weight: 400;
+}
+.center-text4 {
+  position: absolute;
+  top: 71%;
   left: 5%;
   /* transform: translate(-80%, -29%); */
   opacity: 0.9;
   font-size: var(--small-font-size);
+  font-weight: 600;
+}
+.center-text5 {
+  position: absolute;
+  top: 83%;
+  left: 5%;
+  /* transform: translate(-80%, -29%); */
+  opacity: 0.9;
+  font-size: var(--small-font-size);
+  font-weight: 400;
 }
 .trans-body {
   background-color: #b6b6b61a;

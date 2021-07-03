@@ -170,17 +170,31 @@ export default {
     changeTheme() {
       const darkTheme = "dark-theme";
       const isChecked = document.getElementById("checkbox").checked;
-      const selectedTheme = localStorage.getItem("selected-theme");
       const getCurrentTheme = () =>
         document.body.classList.contains(darkTheme) ? "dark" : "light";
-      if (selectedTheme && isChecked) {
+      if (isChecked) {
         document.body.classList.add(darkTheme);
-      } else if (selectedTheme && !isChecked) {
+      } else if (!isChecked) {
         document.body.classList.remove(darkTheme);
       }
 
       localStorage.setItem("selected-theme", getCurrentTheme());
+    },
+    checkTheme() {
+      const darkTheme = "dark-theme";
+      const selectedTheme = localStorage.getItem("selected-theme");
+
+      if (selectedTheme == "dark") {
+        document.body.classList.add(darkTheme);
+        document.getElementById("checkbox").checked = true;
+      } else if (selectedTheme == "light") {
+        document.body.classList.remove(darkTheme);
+        document.getElementById("checkbox").checked = false;
+      }
     }
+  },
+  mounted() {
+    this.checkTheme();
   },
   created() {
     // window.addEventListener("scroll", this.scrollHeader);

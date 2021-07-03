@@ -12,7 +12,16 @@
 
           <div>
             <div class="d-flex">
-              <div @click="callModal('cable', 'Dstv')" class="mt-3 select">
+              <div
+                @click="
+                  callModal('cable', {
+                    msg: 'Dstv',
+                    img: 'dstv.png'
+                  })
+                "
+                class="mt-3"
+                style="text-align:center"
+              >
                 <div class="icon">
                   <img
                     src="../../../assets/images/dstv.png"
@@ -25,7 +34,16 @@
                   >
                 </div>
               </div>
-              <div class="ml-5 mt-3 select">
+              <div
+                class="ml-5 mt-3"
+                style="text-align:center"
+                @click="
+                  callModal('cable', {
+                    msg: 'Gotv',
+                    img: 'gotv.png'
+                  })
+                "
+              >
                 <div class="icon">
                   <img
                     src="../../../assets/images/gotv.png"
@@ -39,7 +57,16 @@
                 </div>
               </div>
 
-              <div class="ml-5 mt-3">
+              <div
+                class="ml-5 mt-3"
+                style="text-align:center"
+                @click="
+                  callModal('cable', {
+                    msg: 'Tstv',
+                    img: 'tstv.png'
+                  })
+                "
+              >
                 <div class="icon">
                   <img
                     src="../../../assets/images/tstv.png"
@@ -52,66 +79,204 @@
                   >
                 </div>
               </div>
+
+              <div
+                class="ml-5 mt-3"
+                style="text-align:center"
+                @click="
+                  callModal('cable', {
+                    msg: 'Startimes',
+                    img: 'startimes.jpg'
+                  })
+                "
+              >
+                <div class="icon">
+                  <img
+                    src="../../../assets/images/startimes.jpg"
+                    class="img-fluid"
+                  />
+                </div>
+                <div class=" mt-2">
+                  <span class="small-text grey-text" style="font-weight:400;"
+                    >StarTimes</span
+                  >
+                </div>
+              </div>
             </div>
           </div>
         </div>
-        <div class="mt-3">
+        <div class="mt-8">
           <div class="space-between">
             <p>Electricity Bill</p>
             <span class="small-text primary-text view-more">view more</span>
           </div>
 
           <div>
-            <div class="d-flex">
-              <div class="mt-3" @click="callModal('electricity', 'dstv')">
+            <div class="d-flex" style="flex-wrap:wrap">
+              <div
+                class="mt-3"
+                style="text-align:center"
+                @click="
+                  callModal('electricity', {
+                    msg: 'Eko Electric',
+                    img: 'eko.jpg'
+                  })
+                "
+              >
                 <div class="icon">
-                  <img
-                    src="../../../assets/images/profile.png"
-                    class="img-fluid"
-                  />
+                  <img src="../../../assets/images/eko.jpg" class="img-fluid" />
                 </div>
                 <div class=" mt-2">
                   <span class="small-text grey-text" style="font-weight:400;"
-                    >Taylor Clark</span
+                    >Eko Electric</span
                   >
                 </div>
               </div>
-              <div class="ml-5 mt-3">
+              <div
+                class="ml-5 mt-3"
+                style="text-align:center"
+                @click="
+                  callModal('electricity', {
+                    msg: 'Ikeja Electric',
+                    img: 'ie.png'
+                  })
+                "
+              >
                 <div class="icon">
-                  <img
-                    src="../../../assets/images/profile.png"
-                    class="img-fluid"
-                  />
+                  <img src="../../../assets/images/ie.png" class="img-fluid" />
                 </div>
                 <div class=" mt-2">
                   <span class="small-text grey-text" style="font-weight:400;"
-                    >Taylor Clark</span
+                    >Ikeja Electric</span
                   >
                 </div>
               </div>
-              <div class="ml-5 mt-3">
+              <div
+                class="ml-5 mt-3"
+                style="text-align:center"
+                @click="
+                  callModal('electricity', {
+                    msg: 'Kano Electric',
+                    img: 'Kedco.png'
+                  })
+                "
+              >
                 <div class="icon">
                   <img
-                    src="../../../assets/images/profile.png"
+                    src="../../../assets/images/Kedco.png"
                     class="img-fluid"
                   />
                 </div>
                 <div class=" mt-2">
                   <span class="small-text grey-text" style="font-weight:400;"
-                    >Taylor Clark</span
+                    >Kano Electric</span
                   >
                 </div>
               </div>
-              <div class="ml-5 mt-3">
+              <div
+                class="ml-5 mt-3 mr-3"
+                style="text-align:center"
+                @click="
+                  callModal('electricity', {
+                    msg: 'Kaduna Electric',
+                    img: 'kaduna.png'
+                  })
+                "
+              >
                 <div class="icon">
                   <img
-                    src="../../../assets/images/profile.png"
+                    src="../../../assets/images/kaduna.png"
                     class="img-fluid"
                   />
                 </div>
                 <div class=" mt-2">
                   <span class="small-text grey-text" style="font-weight:400;"
-                    >Taylor Clark</span
+                    >Kaduna Electric</span
+                  >
+                </div>
+              </div>
+              <div
+                class=" mt-3"
+                style="text-align:center"
+                @click="
+                  callModal('electricity', {
+                    msg: 'Jos Electric',
+                    img: 'jed.png'
+                  })
+                "
+              >
+                <div class="icon">
+                  <img src="../../../assets/images/jed.png" class="img-fluid" />
+                </div>
+                <div class=" mt-2">
+                  <span class="small-text grey-text" style="font-weight:400;"
+                    >Jos Electric</span
+                  >
+                </div>
+              </div>
+              <div
+                class=" mt-3"
+                style="text-align:center"
+                @click="
+                  callModal('electricity', {
+                    msg: 'Abuja Electric',
+                    img: 'abuja.png'
+                  })
+                "
+              >
+                <div class="icon">
+                  <img
+                    src="../../../assets/images/abuja.png"
+                    class="img-fluid"
+                  />
+                </div>
+                <div class=" mt-2">
+                  <span class="small-text grey-text" style="font-weight:400;"
+                    >Abuja Electric</span
+                  >
+                </div>
+              </div>
+              <div
+                class="ml-5 mt-3"
+                style="text-align:center"
+                @click="
+                  callModal('electricity', {
+                    msg: 'Ibadan Electric',
+                    img: 'ibedc.png'
+                  })
+                "
+              >
+                <div class="icon">
+                  <img
+                    src="../../../assets/images/ibedc.png"
+                    class="img-fluid"
+                  />
+                </div>
+                <div class=" mt-2">
+                  <span class="small-text grey-text" style="font-weight:400;"
+                    >Ibadan Electric</span
+                  >
+                </div>
+              </div>
+              <div
+                class="ml-5 mt-3"
+                style="text-align:center"
+                @click="
+                  callModal('electricity', {
+                    msg: 'Enugu Electric',
+                    img: 'eedc.jpg'
+                  })
+                "
+              >
+                <div class="icon">
+                  <img
+                    src="../../../assets/images/eedc.jpg"
+                    class="img-fluid"
+                  />
+                </div>
+                <div class=" mt-2">
+                  <span class="small-text grey-text" style="font-weight:400;"
+                    >Enugu Electric</span
                   >
                 </div>
               </div>
@@ -191,30 +356,38 @@
 
           <div>
             <div class="d-flex">
-              <div class="mt-3" @click="callModal('databundle', 'dstv')">
-                <div class="icon">
-                  <img src="../../../assets/images/mtn.png" class="img-fluid" />
-                </div>
-                <div class=" mt-2">
-                  <span class="small-text grey-text" style="font-weight:400;"
-                    >MTN</span
-                  >
-                </div>
-              </div>
-              <div class="ml-5 mt-3">
+              <div
+                class="mt-3"
+                style="text-align:center"
+                @click="
+                  callModal('databundle', {
+                    msg: 'Swift',
+                    img: 'swift.png'
+                  })
+                "
+              >
                 <div class="icon">
                   <img
-                    src="../../../assets/images/airtel.png"
+                    src="../../../assets/images/swift.png"
                     class="img-fluid"
                   />
                 </div>
                 <div class=" mt-2">
                   <span class="small-text grey-text" style="font-weight:400;"
-                    >Airtel</span
+                    >Swift</span
                   >
                 </div>
               </div>
-              <div class="ml-5 mt-3">
+              <div
+                class="ml-5 mt-3"
+                style="text-align:center"
+                @click="
+                  callModal('databundle', {
+                    msg: 'Smile',
+                    img: 'smile.png'
+                  })
+                "
+              >
                 <div class="icon">
                   <img
                     src="../../../assets/images/smile.png"
@@ -227,7 +400,16 @@
                   >
                 </div>
               </div>
-              <div class="ml-5 mt-3">
+              <div
+                class="ml-5 mt-3"
+                style="text-align:center"
+                @click="
+                  callModal('databundle', {
+                    msg: 'Spectranet',
+                    img: 'spectranet.png'
+                  })
+                "
+              >
                 <div class="icon">
                   <img
                     src="../../../assets/images/spectranet.png"
@@ -243,69 +425,34 @@
             </div>
           </div>
         </div>
-        <!-- <div class="mt-3">
+        <div class="mt-8">
           <div class="space-between">
-            <p>Transportation</p>
+            <p>Utility</p>
             <span class="small-text primary-text view-more">view more</span>
           </div>
 
           <div>
             <div class="d-flex">
-              <div class="mt-3">
+              <div
+                class="mt-3"
+                style="text-align:center"
+                @click="
+                  callModal('utility', {
+                    msg: 'LCC',
+                    img: 'lcc.jpg'
+                  })
+                "
+              >
                 <div class="icon">
-                  <img
-                    src="../../../assets/images/profile.png"
-                    class="img-fluid"
-                  />
+                  <img src="../../../assets/images/lcc.jpg" class="img-fluid" />
                 </div>
                 <div class=" mt-2">
-                  <span class="small-text grey-text" style="font-weight:400;"
-                    >Taylor Clark</span
-                  >
-                </div>
-              </div>
-              <div class="ml-5 mt-3">
-                <div class="icon">
-                  <img
-                    src="../../../assets/images/profile.png"
-                    class="img-fluid"
-                  />
-                </div>
-                <div class=" mt-2">
-                  <span class="small-text" style="font-weight:400;"
-                    >Taylor Clark</span
-                  >
-                </div>
-              </div>
-              <div class="ml-5 mt-3">
-                <div class="icon">
-                  <img
-                    src="../../../assets/images/profile.png"
-                    class="img-fluid"
-                  />
-                </div>
-                <div class=" mt-2">
-                  <span class="small-text" style="font-weight:400;"
-                    >Taylor Clark</span
-                  >
-                </div>
-              </div>
-              <div class="ml-5 mt-3">
-                <div class="icon">
-                  <img
-                    src="../../../assets/images/profile.png"
-                    class="img-fluid"
-                  />
-                </div>
-                <div class=" mt-2">
-                  <span class="small-text" style="font-weight:400;"
-                    >Taylor Clark</span
-                  >
+                  <span class="small-text" style="font-weight:400;">LCC</span>
                 </div>
               </div>
             </div>
           </div>
-        </div> -->
+        </div>
         <!-- <div class="mt-3">
           <div class="space-between">
             <p>Betting</p>
@@ -394,7 +541,7 @@ export default {
     };
   },
   methods: {
-    callModal(name, msg) {
+    callModal(name, { msg, img }) {
       switch (name) {
         case "cable":
           name = cable;
@@ -411,7 +558,7 @@ export default {
       }
       this.$modal.show(
         name,
-        { msg: msg },
+        { msg: msg, img: img },
         { adaptive: true, draggable: false, width: "70%", clickToClose: false }
       );
     }

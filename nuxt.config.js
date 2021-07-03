@@ -58,17 +58,23 @@ export default {
     ]
   },
   script: [
+    // {
+    //   src: "https://unpkg.com/bs-stepper/dist/js/bs-stepper.min.js",
+    //   type: "text/javascript"
+    // },
     {
-      src: "https://unpkg.com/bs-stepper/dist/js/bs-stepper.min.js",
+      src: "https://code.jquery.com/jquery-3.3.1.slim.min.js",
       type: "text/javascript"
     },
     {
       src:
-        "https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js",
-      type: "text/javascript",
-      integrity:
-        "sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf",
-      crossorigin: "anonymous"
+        "https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js",
+      type: "text/javascript"
+    },
+    {
+      src:
+        "https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js",
+      type: "text/javascript"
     }
   ],
   // Global CSS: https://go.nuxtjs.dev/config-css
@@ -84,8 +90,10 @@ export default {
     { src: "plugins/owl.js", ssr: false },
     { src: "plugins/crypto.js", mode: "client" },
     { src: "plugins/vue-js-modal.js", mode: "client" }
+    // { src: "plugins/jquery.js", mode: "client" },
+    // { src: "plugins/bootstrap.js", mode: "client" }
   ],
-
+  // js: ["@assets/js/bootstrap.bundle.min.js"],
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
 
@@ -95,11 +103,24 @@ export default {
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
     // https://go.nuxtjs.dev/axios
-    "@nuxtjs/axios"
+    "@nuxtjs/axios",
+    "@nuxtjs/auth"
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {},
+
+  // auth: {
+  //   // Options
+  // },
+
+  // router: {
+  //   middleware: ["auth"]
+  // },
+
+  pwa: {
+    icon: false // disables the icon module
+  },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {}

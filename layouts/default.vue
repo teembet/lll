@@ -3,15 +3,28 @@
     <Nuxt />
   </div>
 </template>
+<script>
+export default {
+  mounted() {
+    const darkTheme = "dark-theme";
+    const selectedTheme = localStorage.getItem("selected-theme");
 
+    if (selectedTheme == "dark") {
+      document.body.classList.add(darkTheme);
+    } else if (selectedTheme == "light") {
+      document.body.classList.remove(darkTheme);
+    }
+  }
+};
+</script>
 <style>
-.app-divider{
+.app-divider {
   widows: 100%;
   height: 1px;
   background: #ececec;
   margin: 20px 0;
 }
-.header-flex{
+.header-flex {
   display: flex;
   justify-content: space-between;
 }
@@ -172,7 +185,7 @@ body.dark-theme {
   --h2-font-size: 1.25rem;
   --h3-font-size: 1rem;
   --normal-font-size: 0.938rem;
-    --small-font-size: 0.8rem;
+  --small-font-size: 0.8rem;
   --smaller-font-size: 0.55rem;
   /*========== Font weight ==========*/
   --font-medium: 500;

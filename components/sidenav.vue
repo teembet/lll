@@ -61,6 +61,36 @@
           Pay Bills
         </router-link>
       </li>
+      <li class="jover">
+        <router-link
+          exact-active-class="active"
+          to="/dashboard/bills"
+          @click="activeBtn = 'btn4'"
+          :class="{ active: activeBtn === 'btn4' }"
+        >
+          <img
+            style="width:17px;margin-right:18px"
+            src="../assets/images/bills.svg"
+            class="img-fluid"
+          />
+          Transactions
+        </router-link>
+      </li>
+      <li class="jover">
+        <router-link
+          exact-active-class="active"
+          to="/dashboard/bills"
+          @click="activeBtn = 'btn4'"
+          :class="{ active: activeBtn === 'btn4' }"
+        >
+          <img
+            style="width:17px;margin-right:18px"
+            src="../assets/images/bills.svg"
+            class="img-fluid"
+          />
+          Settings
+        </router-link>
+      </li>
       <li @click="Logout" class="jover" style="margin-top:8rem !important">
         <a>
           <img
@@ -243,7 +273,7 @@ body {
   transition: 0.5s;
   align-items: center;
   justify-content: center;
-  transform: translate(10px);
+  /* transform: translate(10px); */
 }
 
 @media (min-width: 768px) {

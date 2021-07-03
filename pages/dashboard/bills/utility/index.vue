@@ -14,7 +14,13 @@
         </button>
       </div>
       <form @submit.prevent="sendRequest">
-        <h5 class="center card-head bold-text">{{ msg ? msg : "cable" }}</h5>
+        <h5 class="center card-head bold-text">
+          {{ msg ? msg : "cable" }}
+          <img
+            class="img-fluid ml-4 icon"
+            :src="require(`../../../../assets/images/${img}`)"
+          />
+        </h5>
         <div class=" ">
           <div class="col">
             <label class="formlabel" for="formGroupExampleInput">Amount</label>
@@ -97,7 +103,8 @@ export default {
     Status
   },
   props: {
-    msg: String
+    msg: String,
+    img: String
   },
 
   data() {
