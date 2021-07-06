@@ -70,10 +70,12 @@
                   <p class="title-2">Forgot Password?</p>
                 </div>
               </div>
+              <div class="center">
+                <button type="submit" class="center mt-5 btn-login">
+                  Login
+                </button>
+              </div>
 
-              <button type="submit" class="center mt-5 btn-login">
-                Login
-              </button>
               <div class="center">
                 <p class="title-2 mt-3">
                   Dont Have An Account?
@@ -116,6 +118,11 @@ export default {
   methods: {
     async Login() {
       this.loader = true;
+      const local_token = localStorage.getItem("token");
+      if (local_token) {
+        this.$router.push("/dashboard/overview");
+        return;
+      }
       try {
         const user = await axios().post(
           process.env.BASE_URL + "paysure/gettoken",

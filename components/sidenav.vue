@@ -5,7 +5,7 @@
         <router-link
           exact-active-class="active"
           to="/dashboard/overview"
-          @click="activeBtn = 'btn1'"
+          @click.native="closeNav()"
           :class="{ active: activeBtn === 'btn1' }"
         >
           <img
@@ -20,7 +20,7 @@
         <router-link
           exact-active-class="active"
           to="/dashboard/send-money"
-          @click="activeBtn = 'btn2'"
+          @click.native="closeNav()"
           :class="{ active: activeBtn === 'btn2' }"
         >
           <img
@@ -35,7 +35,7 @@
         <router-link
           exact-active-class="active"
           to="/dashboard/airtime"
-          @click="activeBtn = 'btn3'"
+          @click.native="closeNav()"
           :class="{ active: activeBtn === 'btn3' }"
         >
           <img
@@ -50,7 +50,7 @@
         <router-link
           exact-active-class="active"
           to="/dashboard/bills"
-          @click="activeBtn = 'btn4'"
+          @click.native="closeNav()"
           :class="{ active: activeBtn === 'btn4' }"
         >
           <img
@@ -64,9 +64,9 @@
       <li class="jover">
         <router-link
           exact-active-class="active"
-          to="/dashboard/bills"
-          @click="activeBtn = 'btn4'"
-          :class="{ active: activeBtn === 'btn4' }"
+          to="/dashboard/transactions"
+          @click.native="closeNav()"
+          :class="{ active: activeBtn === 'btn5' }"
         >
           <img
             style="width:17px;margin-right:18px"
@@ -79,9 +79,9 @@
       <li class="jover">
         <router-link
           exact-active-class="active"
-          to="/dashboard/bills"
-          @click="activeBtn = 'btn4'"
-          :class="{ active: activeBtn === 'btn4' }"
+          to="/dashboard/settings"
+          @click.native="closeNav()"
+          :class="{ active: activeBtn === 'btn6' }"
         >
           <img
             style="width:17px;margin-right:18px"
@@ -91,7 +91,7 @@
           Settings
         </router-link>
       </li>
-      <li @click="Logout" class="jover" style="margin-top:8rem !important">
+      <li @click="Logout" class="jover" style="margin-top:6rem !important">
         <a>
           <img
             style="width:17px;margin-right:18px"
@@ -119,6 +119,16 @@ export default {
       localStorage.removeItem("user");
       localStorage.removeItem("token");
       this.$router.push("/login");
+    },
+    closeNav() {
+      if (window.matchMedia("(min-width: 768px)").matches) {
+        return;
+      } else {
+        var aside = document.getElementById("wrapper");
+        if (aside) {
+          aside.classList.toggle("toggled");
+        }
+      }
     }
   }
 };
@@ -234,7 +244,7 @@ body {
 .sidebar-nav li {
   border-bottom: 1px solid rgba(255, 255, 255, 0.02);
   cursor: pointer;
-  margin: 20px 10px;
+  margin: 10px 10px;
   font-size: var(--small-font-size);
   font-weight: 600;
   text-decoration: none;

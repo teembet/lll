@@ -317,7 +317,7 @@ export default {
 }
 .center-text2 {
   position: absolute;
-  top: 38%;
+  top: 34%;
   left: 4%;
   /* transform: translate(-40%, -23%); */
   font-size: var(--h1-font-size);

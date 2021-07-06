@@ -5,6 +5,7 @@ export default {
     htmlAttrs: {
       lang: "en"
     },
+
     meta: [
       { charset: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
@@ -58,25 +59,50 @@ export default {
     ]
   },
   script: [
-    // {
-    //   src: "https://unpkg.com/bs-stepper/dist/js/bs-stepper.min.js",
-    //   type: "text/javascript"
-    // },
     {
-      src: "https://code.jquery.com/jquery-3.3.1.slim.min.js",
-      type: "text/javascript"
+      src:
+        "https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+    },
+    { src: "https://code.jquery.com/jquery-3.3.1.slim.min.js" },
+    {
+      src:
+        "https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
     },
     {
       src:
-        "https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js",
-      type: "text/javascript"
-    },
-    {
-      src:
-        "https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js",
-      type: "text/javascript"
+        "https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js",
+      integrity:
+        "sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf",
+      crossorigin: "anonymous"
     }
   ],
+  // script: [
+  //   // {
+  //   //   src: "https://unpkg.com/bs-stepper/dist/js/bs-stepper.min.js",
+  //   //   type: "text/javascript"
+  //   // },
+  //   // {
+  //   //   src: "https://code.jquery.com/jquery-3.5.1.slim.min.js",
+  //   //   integrity:
+  //   //     "sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj",
+  //   //   crossorigin: "anonymous",
+  //   //   type: "text/javascript"
+  //   // },
+  //   {
+  //     src:
+  //       "https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js",
+  //     type: "text/javascript"
+  //   }
+  //   // {
+  //   //   src:
+  //   //     "https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js",
+  //   //   integrity:
+  //   //     "sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx",
+  //   //   crossorigin: "anonymous",
+  //   //   type: "text/javascript"
+  //   // }
+  // ],
+
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
     "~assets/css/vendor.min.css",
@@ -89,9 +115,9 @@ export default {
     { src: "~plugins/toast.js", mode: "client" },
     { src: "plugins/owl.js", ssr: false },
     { src: "plugins/crypto.js", mode: "client" },
-    { src: "plugins/vue-js-modal.js", mode: "client" }
-    // { src: "plugins/jquery.js", mode: "client" },
-    // { src: "plugins/bootstrap.js", mode: "client" }
+    { src: "plugins/vue-js-modal.js", mode: "client" },
+    { src: "plugins/jquery.js", mode: "client" },
+    { src: "plugins/bootstrap.js", mode: "client" }
   ],
   // js: ["@assets/js/bootstrap.bundle.min.js"],
   // Auto import components: https://go.nuxtjs.dev/config-components

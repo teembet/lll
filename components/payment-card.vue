@@ -174,7 +174,7 @@ export default {
   }
 };
 </script>
-<style>
+<style scoped>
 /* .home {
   position: fixed;
   top: 0;

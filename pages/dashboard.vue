@@ -1,5 +1,5 @@
 <template>
-  <div style="padding:20px">
+  <div style="padding:20px" v-if="$nuxt.isOnline">
     <dashboard-nav></dashboard-nav>
 
     <div id="wrapper">
@@ -8,12 +8,23 @@
       <!-- /#page-content-wrapper -->
 
       <div id="page-content-wrapper">
-        <div class="container-fluid">
+        <div class="container-fluid mt-4">
           <div class="row">
             <div class="col-lg-12">
               <Nuxt />
             </div>
           </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div v-else>
+    <div class="wrapper-body">
+      <div class="wrapper">
+        <h1>OFFLINE</h1>
+        <h4>Please check your internet connection</h4>
+        <div class="center">
+          <button @click="refresh" class="button btn">RETRY</button>
         </div>
       </div>
     </div>
@@ -38,6 +49,12 @@ export default {
       if (aside) {
         aside.classList.toggle("toggled");
       }
+    },
+    refresh() {
+      console.log("refreshed");
+      this.$nuxt.$loading.start();
+      setTimeout(() => this.$nuxt.$loading.finish(), 5000);
+      // this.$nuxt.refresh();
     }
   }
 };
@@ -90,9 +107,10 @@ body {
 #page-content-wrapper {
   width: 100%;
   position: absolute;
-  /* background-image: url("../assets/images/airtimebkg.png");
+  /* background-image: url("../assets/images/dashbkg.svg");
   background-size: cover;
   background-repeat: no-repeat; */
+  height: 100%;
   background-color: var(--body-color);
 
   /* padding: 15px; */
@@ -132,5 +150,46 @@ body {
     position: relative;
     margin-right: 0;
   }
+}
+.wrapper-body {
+  width: 100%;
+  min-height: 100vh;
+  display: relative;
+  margin: 0;
+  padding: 0;
+  background: -webkit-linear-gradient(
+    -45deg,
+    #183850 0,
+    #183850 25%,
+    #192c46 50%,
+    #22254c 75%,
+    #22254c 100%
+  );
+}
+.wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  align-items: center;
+  justify-content: center;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.button {
+  display: block;
+
+  padding: 15px 30px;
+  background: #22254c;
+  color: white;
+
+  letter-spacing: 5px;
+
+  text-decoration: none;
+  box-shadow: 0 0 15px #22254c;
 }
 </style>

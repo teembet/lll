@@ -8,7 +8,6 @@
       v-if="status"
     />
     <div class="col-lg-5 card">
-    
       <form @submit.prevent="sendRequest">
         <h5 class="center card-head bold-text">Airtime Recharge</h5>
         <div class=" ">
@@ -303,12 +302,11 @@ export default {
           this.run9mobile(formData, local_token);
           break;
       }
-    },
-  
+    }
   }
 };
 </script>
-<style>
+<style scoped>
 input,
 select::placeholder {
   font-size: 11px;

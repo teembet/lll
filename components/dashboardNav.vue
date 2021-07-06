@@ -1,12 +1,18 @@
 <template>
   <div>
     <!-- Navbar-->
-    <nav class="navbar navbar-expand-lg navbar-light">
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+      <!-- Left elements -->
       <div class="container-fluid justify-content-between">
-        <!-- Left elements -->
-        <div class="d-flex">
-          <!-- Brand -->
-          <nuxt-link class="navbar-brand" to="/dashboard/overview">
+        <!-- Brand -->
+        <ul class="d-flex ml-4">
+          <i
+            class="fa fa-bars close-aside hidden-sm hidden-md hidden-lg"
+            @click="openNav()"
+            data-close="show-side-navigation1"
+            style="align-self:center"
+          ></i>
+          <nuxt-link class="navbar-brand ml-3" to="/dashboard/overview">
             <img
               src="../assets/images/paysure.png"
               class="img-fluid"
@@ -14,13 +20,13 @@
               style="margin-top: 2px;"
             />
           </nuxt-link>
+        </ul>
+        <!-- Search form -->
 
-          <!-- Search form -->
-        </div>
         <!-- Left elements -->
 
         <!-- Center elements -->
-        <ul class="navbar-nav flex-row d-none d-md-flex col-lg-8 middle">
+        <!-- <ul class="navbar-nav flex-row d-none d-md-flex col-lg-8 middle">
           <form class="input-group w-auto my-auto d-none d-sm-flex col-lg-12">
             <input
               autocomplete="off"
@@ -33,23 +39,23 @@
               ><i class="fas fa-search"></i
             ></span>
           </form>
-        </ul>
+        </ul> -->
         <!-- Center elements -->
 
         <!-- Right elements -->
         <ul class="navbar-nav flex-row">
           <!-- <li class="nav-item me-3 me-lg-1">
-        <a class="nav-link d-sm-flex align-items-sm-center" href="#">
-          <img
-            src="https://mdbootstrap.com/img/new/avatars/1.jpg"
-            class="rounded-circle"
-            height="22"
-            alt=""
-            loading="lazy"
-          />
-          <strong class="d-none d-sm-block ms-1">John</strong>
-        </a>
-      </li> -->
+          <a class="nav-link d-sm-flex align-items-sm-center" href="#">
+            <img
+              src="https://mdbootstrap.com/img/new/avatars/1.jpg"
+              class="rounded-circle"
+              height="22"
+              alt=""
+              loading="lazy"
+            />
+            <strong class="d-none d-sm-block ms-1">John</strong>
+          </a>
+        </li> -->
 
           <li class="nav-item  me-3 me-lg-1">
             <a class="nav-link" href="#">
@@ -83,19 +89,9 @@
               </li>
             </ul>
           </li>
-          <li
-            style="align-self: center;
-"
-          >
-            <i
-              class="fa fa-bars close-aside hidden-sm hidden-md hidden-lg"
-              @click="openNav()"
-              data-close="show-side-navigation1"
-            ></i>
-          </li>
         </ul>
-        <!-- Right elements -->
       </div>
+      <!-- Right elements -->
     </nav>
     <!-- Navbar -->
 
@@ -120,9 +116,9 @@ export default {
 
 <style scoped>
 .navbar {
-  z-index: 1;
+  z-index: 2000;
   background: var(--body-color);
-  margin-top: -20px;
+  /* margin-top: 10px; */
 }
 body {
   padding-top: 0px !important;
