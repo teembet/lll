@@ -135,7 +135,12 @@ export default {
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {},
-
+  env: {
+    baseUrl:
+      process.env.NODE_ENV === "dev"
+        ? "http://localhost:3000"
+        : "http://52.149.222.131:5009/api/v1/"
+  },
   // auth: {
   //   // Options
   // },

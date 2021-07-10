@@ -114,7 +114,8 @@ export default {
     };
   },
   mounted() {
-    console.log(process.env.BASE_URL);
+    console.log(process.env.BASE_URL, "bet");
+    console.log(process.env.baseUrl, "tim");
   },
   methods: {
     async Login() {
