@@ -26,15 +26,15 @@ export default (history = null) => {
         });
       }
 
-      if (error.response.status === 401) {
+      if (error.response.status === 401 || 100) {
         localStorage.removeItem("token");
         localStorage.removeItem("user");
         if (history) {
-          window.location = "/";
-          console.log("win");
+          window.location = "/login";
+          console.log(error);
         } else {
-          window.location = "/";
-          console.log("lose");
+          window.location = "/login";
+          console.log(error);
         }
       } else {
         return new Promise((resolve, reject) => {

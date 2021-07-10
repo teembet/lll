@@ -133,7 +133,7 @@ export default {
     Status
   },
   mixins: [global],
- 
+
   data() {
     return {
       show: Boolean,
@@ -160,7 +160,6 @@ export default {
       this.status = false;
     },
     async bankLookup() {
-  
       const formData = {
         bankCode: this.form.beneficiaryBankCode,
         accountNumber: this.form.beneficiaryAccountNumber,

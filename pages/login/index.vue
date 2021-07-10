@@ -18,7 +18,8 @@
             <carousel :autoplay="true" :nav="true" :items="1">
               <img src="../../assets/images/caro1.png" />
 
-              <img src="../../assets/images/caro1.png" />
+              <img src="../../assets/images/1stpic.png" />
+              <img src="../../assets/images/2ndpic.png" />
             </carousel>
           </no-ssr>
         </div>

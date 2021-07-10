@@ -3,16 +3,26 @@
     <Loader v-show="loader" />
     <div class="login-block">
       <div class="row">
-        <router-link to="/">
+        <nuxt-link to="/">
           <img class="img-abs" src="../../assets/images/paysure_White.png" />
-        </router-link>
+        </nuxt-link>
 
         <div
           id="carouselExampleIndicators"
-          class="carousel slide col-lg-4"
+          class="carousel slide col-lg-6"
           data-ride="carousel"
         >
-          <ol class="carousel-indicators">
+          <no-ssr>
+            <!-- important to add no-ssr-->
+
+            <carousel :autoplay="true" :nav="true" :items="1">
+              <img src="../../assets/images/caro1.png" />
+
+              <img src="../../assets/images/1stpic.png" />
+              <img src="../../assets/images/2ndpic.png" />
+            </carousel>
+          </no-ssr>
+          <!-- <ol class="carousel-indicators">
             <li
               data-target="#carouselExampleIndicators"
               data-slide-to="0"
@@ -20,32 +30,32 @@
             ></li>
             <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
             <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-          </ol>
-          <div class="carousel-inner">
+          </ol> -->
+          <!-- <div class="carousel-inner">
             <div class="carousel-item active">
               <img
                 class="d-block w-100"
-                src="../../assets/images/caro1.png"
+                src="../../assets/images/first-picture.png"
                 alt="First slide"
               />
             </div>
             <div class="carousel-item">
               <img
                 class="d-block w-100"
-                src="../../assets/images/caro1.png"
+                src="../../assets/images/cart.png"
                 alt="Second slide"
               />
             </div>
             <div class="carousel-item">
               <img
                 class="d-block w-100"
-                src="../../assets/images/caro1.png"
+                src="../../assets/images/wallet.png"
                 alt="Third slide"
               />
             </div>
-          </div>
+          </div> -->
         </div>
-        <div class="col-lg-8" style="overflow:scroll">
+        <div class="col-lg-6" style="overflow:scroll">
           <div class="container resize">
             <form @submit.prevent="sendRequest">
               <h1 class="title" style="font-size:35px">Get Started!</h1>
@@ -53,7 +63,7 @@
                 Let's get you started creating a new account
               </h4>
               <div class="form-row ">
-                <div class="col">
+                <div class="col-lg-6 mt-1">
                   <label class="formlabel" for="formGroupExampleInput"
                     >Username</label
                   >
@@ -66,7 +76,7 @@
                     required
                   />
                 </div>
-                <div class="col">
+                <div class="col-lg-6 mt-1">
                   <label class="formlabel" for="formGroupExampleInput"
                     >BVN</label
                   >
@@ -74,14 +84,14 @@
                     type="text"
                     class="form-control"
                     id="formGroupExampleInput"
-                    placeholder="bvn"
+                    placeholder=""
                     required
                     v-model="bvn"
                   />
                 </div>
               </div>
               <div class="form-row ">
-                <div class="col">
+                <div class="col-lg-6 mt-1">
                   <label class="formlabel" for="formGroupExampleInput"
                     >Phone No</label
                   >
@@ -93,7 +103,7 @@
                     v-model="phoneNumber"
                   />
                 </div>
-                <div class="col">
+                <div class="col-lg-6 mt-1">
                   <label class="formlabel" for="formGroupExampleInput"
                     >Email</label
                   >
@@ -108,7 +118,7 @@
                 </div>
               </div>
               <div class="form-row ">
-                <div class="col">
+                <div class="col-lg-6 mt-1">
                   <label class="formlabel" for="formGroupExampleInput"
                     >Password</label
                   >
@@ -121,7 +131,7 @@
                     v-model="password"
                   />
                 </div>
-                <div class="col">
+                <div class="col-lg-6 mt-1">
                   <label class="formlabel" for="formGroupExampleInput"
                     >Transaction Pin</label
                   >
@@ -136,7 +146,7 @@
                 </div>
               </div>
               <div class="form-row ">
-                <div class="col">
+                <div class="col-lg-6 mt-1">
                   <label class="formlabel" for="formGroupExampleInput"
                     >State</label
                   >
@@ -149,7 +159,7 @@
                     v-model="state"
                   />
                 </div>
-                <div class="col">
+                <div class="col-lg-6 mt-1">
                   <label class="formlabel" for="formGroupExampleInput"
                     >LGA</label
                   >
@@ -164,7 +174,7 @@
                 </div>
               </div>
               <div class="form-row ">
-                <div class="col">
+                <div class="col-lg-6">
                   <label class="formlabel" for="formGroupExampleInput"
                     >City</label
                   >
@@ -177,7 +187,7 @@
                     required
                   />
                 </div>
-                <div class="col">
+                <div class="col-lg-6 mt-1">
                   <label class="formlabel" for="formGroupExampleInput"
                     >Address</label
                   >
@@ -376,7 +386,7 @@ export default {
 }*/
 
 .resize {
-  padding: 4rem;
+  padding: 3rem;
 }
 .carousel-indicators {
   position: absolute;
@@ -433,7 +443,7 @@ export default {
 .img-abs {
   position: absolute;
   max-width: 100% !important;
-  z-index: 1;
+  z-index: 2;
   height: 30px !important;
   margin: 20px;
   top: 0px;

@@ -77,146 +77,144 @@
           role="tabpanel"
           aria-labelledby="home-tab"
         >
-          <div class="row mt-3">
-            <div style="display:flex;" class="mt-3 trans-body">
-              <div class="col-lg-10" style="display: flex;">
-                <div class="icon">
-                  <img
-                    src="../../../assets/images/credit.svg"
-                    class="img-fluid trans-img"
-                  />
-                </div>
-                <div class="trans-name">
-                  <div class="row ml-3">
-                    <span class="bold-text small-text">Credit</span>
-                    <span class="small-text">15 mar 2021</span>
-                  </div>
-                </div>
+          <div style="display:flex;" class="mt-3 trans-body">
+            <div class="col-lg-10" style="display: flex;">
+              <div class="icon">
+                <img
+                  src="../../../assets/images/credit.svg"
+                  class="img-fluid trans-img"
+                />
               </div>
-
-              <div class="amount">
-                <span class="bold-text">+$3000</span>
+              <div class="trans-name">
+                <div class="row ml-3">
+                  <span class="bold-text small-text">Credit</span>
+                  <span class="small-text">15 mar 2021</span>
+                </div>
               </div>
             </div>
-            <div style="display:flex;" class="mt-3 trans-body">
-              <div class="col-lg-10" style="display: flex;">
-                <div class="icon">
-                  <img
-                    src="../../../assets/images/credit.svg"
-                    class="img-fluid trans-img"
-                  />
-                </div>
-                <div class="trans-name">
-                  <div class="row ml-3">
-                    <span class="bold-text small-text">Credit</span>
-                    <span class="small-text">15 mar 2021</span>
-                  </div>
-                </div>
-              </div>
 
-              <div class="amount">
-                <span class="bold-text">+$3000</span>
+            <div class="amount">
+              <span class="bold-text">+$3000</span>
+            </div>
+          </div>
+          <div style="display:flex;" class="mt-3 trans-body">
+            <div class="col-lg-10" style="display: flex;">
+              <div class="icon">
+                <img
+                  src="../../../assets/images/credit.svg"
+                  class="img-fluid trans-img"
+                />
+              </div>
+              <div class="trans-name">
+                <div class="row ml-3">
+                  <span class="bold-text small-text">Credit</span>
+                  <span class="small-text">15 mar 2021</span>
+                </div>
               </div>
             </div>
-            <div style="display:flex;" class="mt-3 trans-body">
-              <div class="col-lg-10" style="display: flex;">
-                <div class="icon">
-                  <img
-                    src="../../../assets/images/credit.svg"
-                    class="img-fluid trans-img"
-                  />
-                </div>
-                <div class="trans-name">
-                  <div class="row ml-3">
-                    <span class="bold-text small-text">Credit</span>
-                    <span class="small-text">15 mar 2021</span>
-                  </div>
-                </div>
-              </div>
 
-              <div class="amount">
-                <span class="bold-text">+$3000</span>
+            <div class="amount">
+              <span class="bold-text">+$3000</span>
+            </div>
+          </div>
+          <div style="display:flex;" class="mt-3 trans-body">
+            <div class="col-lg-10" style="display: flex;">
+              <div class="icon">
+                <img
+                  src="../../../assets/images/credit.svg"
+                  class="img-fluid trans-img"
+                />
+              </div>
+              <div class="trans-name">
+                <div class="row ml-3">
+                  <span class="bold-text small-text">Credit</span>
+                  <span class="small-text">15 mar 2021</span>
+                </div>
               </div>
             </div>
-            <div style="display:flex;" class="mt-3 trans-body">
-              <div class="col-lg-10" style="display: flex;">
-                <div class="icon">
-                  <img
-                    src="../../../assets/images/debit.svg"
-                    class="img-fluid trans-img"
-                  />
-                </div>
-                <div class="trans-name">
-                  <div class="row ml-3">
-                    <span class="bold-text small-text">Debit</span>
-                    <span class="small-text">15 mar 2021</span>
-                  </div>
-                </div>
-              </div>
 
-              <div class="amount">
-                <span class="bold-text">+$3000</span>
+            <div class="amount">
+              <span class="bold-text">+$3000</span>
+            </div>
+          </div>
+          <div style="display:flex;" class="mt-3 trans-body">
+            <div class="col-lg-10" style="display: flex;">
+              <div class="icon">
+                <img
+                  src="../../../assets/images/debit.svg"
+                  class="img-fluid trans-img"
+                />
+              </div>
+              <div class="trans-name">
+                <div class="row ml-3">
+                  <span class="bold-text small-text">Debit</span>
+                  <span class="small-text">15 mar 2021</span>
+                </div>
               </div>
             </div>
-            <div style="display:flex;" class="mt-3 trans-body">
-              <div class="col-lg-10" style="display: flex;">
-                <div class="icon">
-                  <img
-                    src="../../../assets/images/debit.svg"
-                    class="img-fluid trans-img"
-                  />
-                </div>
-                <div class="trans-name">
-                  <div class="row ml-3">
-                    <span class="bold-text small-text">Debit</span>
-                    <span class="small-text">15 mar 2021</span>
-                  </div>
-                </div>
-              </div>
 
-              <div class="amount">
-                <span class="bold-text">+$3000</span>
+            <div class="amount">
+              <span class="bold-text">+$3000</span>
+            </div>
+          </div>
+          <div style="display:flex;" class="mt-3 trans-body">
+            <div class="col-lg-10" style="display: flex;">
+              <div class="icon">
+                <img
+                  src="../../../assets/images/debit.svg"
+                  class="img-fluid trans-img"
+                />
+              </div>
+              <div class="trans-name">
+                <div class="row ml-3">
+                  <span class="bold-text small-text">Debit</span>
+                  <span class="small-text">15 mar 2021</span>
+                </div>
               </div>
             </div>
-            <div style="display:flex;" class="mt-3 trans-body">
-              <div class="col-lg-10" style="display: flex;">
-                <div class="icon">
-                  <img
-                    src="../../../assets/images/debit.svg"
-                    class="img-fluid trans-img"
-                  />
-                </div>
-                <div class="trans-name">
-                  <div class="row ml-3">
-                    <span class="bold-text small-text">Debit</span>
-                    <span class="small-text">15 mar 2021</span>
-                  </div>
-                </div>
-              </div>
 
-              <div class="amount">
-                <span class="bold-text">+$3000</span>
+            <div class="amount">
+              <span class="bold-text">+$3000</span>
+            </div>
+          </div>
+          <div style="display:flex;" class="mt-3 trans-body">
+            <div class="col-lg-10" style="display: flex;">
+              <div class="icon">
+                <img
+                  src="../../../assets/images/debit.svg"
+                  class="img-fluid trans-img"
+                />
+              </div>
+              <div class="trans-name">
+                <div class="row ml-3">
+                  <span class="bold-text small-text">Debit</span>
+                  <span class="small-text">15 mar 2021</span>
+                </div>
               </div>
             </div>
-            <div style="display:flex;" class="mt-3 trans-body">
-              <div class="col-lg-10" style="display: flex;">
-                <div class="icon">
-                  <img
-                    src="../../../assets/images/debit.svg"
-                    class="img-fluid trans-img"
-                  />
-                </div>
-                <div class="trans-name">
-                  <div class="row ml-3">
-                    <span class="bold-text small-text">Debit</span>
-                    <span class="small-text">15 mar 2021</span>
-                  </div>
-                </div>
-              </div>
 
-              <div class="amount">
-                <span class="bold-text">+$3000</span>
+            <div class="amount">
+              <span class="bold-text">+$3000</span>
+            </div>
+          </div>
+          <div style="display:flex;" class="mt-3 trans-body">
+            <div class="col-lg-10" style="display: flex;">
+              <div class="icon">
+                <img
+                  src="../../../assets/images/debit.svg"
+                  class="img-fluid trans-img"
+                />
               </div>
+              <div class="trans-name">
+                <div class="row ml-3">
+                  <span class="bold-text small-text">Debit</span>
+                  <span class="small-text">15 mar 2021</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="amount">
+              <span class="bold-text">+$3000</span>
             </div>
           </div>
         </div>
@@ -534,6 +532,7 @@ export default {
   text-decoration: underline !important;
   text-decoration-style: solid !important;
   text-decoration-thickness: 4px !important;
+  text-underline-offset: 5px;
 }
 .trans-body {
   background-color: #b6b6b61a;
@@ -541,5 +540,8 @@ export default {
 }
 .amount {
   align-self: center;
+}
+.pad {
+  padding: 0 20px;
 }
 </style>

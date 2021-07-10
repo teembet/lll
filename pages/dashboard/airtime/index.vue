@@ -5,6 +5,9 @@
       :state="state"
       :message="message"
       :resetState="resetState"
+      :ref="ref"
+      :amount="amount"
+      :service="service"
       v-if="status"
     />
     <div class="col-lg-5 card">
@@ -34,12 +37,13 @@
               class="form-control"
               @change="onchange($event)"
             >
-              <option selected disabled>Select a network</option>
+              <option disabled selected>Select a network</option>
               <option
                 v-for="(item, index) in networks"
                 :key="index"
                 :value="item.id"
-                >{{ item.name }}</option
+              >
+                {{ item.name }}</option
               >
             </select>
           </div>
@@ -99,24 +103,34 @@ export default {
       status: false,
       state: null,
       message: null,
+      amount: null,
+      ref: null,
+      service: null,
+      status: null,
+      name: null,
+
       user: "",
       network: "",
       networks: [
         {
           id: 1,
-          name: "Airtel"
+          name: "Airtel",
+          src: "abuja.png"
         },
         {
           id: 2,
-          name: "Glo"
+          name: "Glo",
+          src: "../../../assets/images/abuja.png"
         },
         {
           id: 3,
-          name: "Mtn"
+          name: "Mtn",
+          src: "../../../assets/images/abuja.png"
         },
         {
           id: 4,
-          name: "9mobile"
+          name: "9mobile",
+          src: "../../../assets/images/abuja.png"
         }
       ],
       form: {
@@ -145,11 +159,15 @@ export default {
           this.loader = false;
           this.status = true;
           this.state = "success";
+
           this.message = "Operation Sucessful";
         } else {
           this.loader = false;
           this.status = true;
           this.state = "failed";
+          this.amount = this.form.amount;
+          this.ref = this.form.beneficiaryNumber;
+          this.service = "Airtel";
           this.message = "Operation Failed";
           this.$toast.open({
             message: `<p style="color:white;">${response.data.responseMessage}</p>`,
@@ -164,6 +182,9 @@ export default {
         this.loader = false;
         this.status = true;
         this.state = "failed";
+        this.amount = this.form.amount;
+        this.ref = this.form.beneficiaryNumber;
+        this.service = "Airtel";
         this.message = "Operation Failed";
       }
     },
@@ -261,9 +282,15 @@ export default {
       this.network = event.target.value;
     },
     encryptData(data, token) {
-      return btoa(
-        this.$CryptoJS.HmacSHA256(JSON.stringify(data), token).toString()
-      );
+      return this.$CryptoJS.AES.encrypt(
+        JSON.stringify(data),
+        this.$CryptoJS.enc.Utf8.parse(token),
+        {
+          iv: this.$CryptoJS.enc.Utf8.parse(token),
+          mode: this.$CryptoJS.mode.CBC,
+          padding: this.CryptoJS.pad.Pkcs7
+        }
+      ).toString();
     },
     sendRequest() {
       this.loader = true;
@@ -277,7 +304,7 @@ export default {
         channel: "Web",
         encryptedData: this.encryptData(
           `amount=${this.form.amount}&beneficiaryNumber=${this.form.beneficiaryNumber}&merchantCode=${this.user.merchantCode}&channel=Web`,
-          local_token
+          this.user.merchantWebToken
         ),
         extraFields: {
           imei: "",

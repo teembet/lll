@@ -17,6 +17,9 @@
           <button class="btn setting-btn" @click="displayPage('pin')">
             Change Wallet Pin <i class="fas fa-arrow-right"></i>
           </button>
+          <button class="btn setting-btn" @click="displayPage('password')">
+            Change Password <i class="fas fa-arrow-right"></i>
+          </button>
           <button class="btn setting-btn">
             Privacy Policy <i class="fas fa-arrow-right"></i>
           </button>
@@ -51,6 +54,56 @@
           <div class="col mt-3">
             <label class="formlabel" for="formGroupExampleInput"
               >Confirm Pin</label
+            >
+            <input
+              type="password"
+              class="form-control"
+              id="formGroupExampleInput"
+              placeholder=""
+              required
+            />
+          </div>
+
+          <div class="center mt-5" style="padding:20px">
+            <button type="submit" class="action-btn">
+              Save
+            </button>
+          </div>
+        </form>
+      </div>
+      <div class="col-lg-5 ml-5 setting-card1 card" v-if="changepass">
+        <h3>Change Password</h3>
+        <form class="card-padding">
+          <div class="col">
+            <label class="formlabel" for="formGroupExampleInput"
+              >Old Password</label
+            >
+            <input
+              type="password"
+              class="form-control"
+              id="formGroupExampleInput"
+              placeholder=""
+              autocomplete="off"
+              required
+            />
+          </div>
+
+          <div class="col mt-3">
+            <label class="formlabel" for="formGroupExampleInput"
+              >New Password</label
+            >
+            <input
+              type="password"
+              class="form-control"
+              id="formGroupExampleInput"
+              placeholder=""
+              required
+            />
+          </div>
+
+          <div class="col mt-3">
+            <label class="formlabel" for="formGroupExampleInput"
+              >Confirm Password</label
             >
             <input
               type="password"
@@ -134,7 +187,8 @@ export default {
   data() {
     return {
       changePin: Boolean,
-      profile: Boolean
+      profile: Boolean,
+      changepass: Boolean
     };
   },
   methods: {
@@ -142,15 +196,22 @@ export default {
       if (name == "profile") {
         this.profile = true;
         this.changePin = false;
+        this.changepass = false;
       } else if (name == "pin") {
         this.changePin = true;
         this.profile = false;
+        this.changepass = false;
+      } else if (name == "password") {
+        this.changepass = true;
+        this.profile = false;
+        this.changePin = false;
       }
     }
   },
   mounted() {
     this.profile = true;
     this.changePin = false;
+    this.changepass = false;
   }
 };
 </script>
