@@ -117,7 +117,7 @@
         >
           Done
         </div>
-        <div @click="resetState" class=" receipt mt-3">
+        <div @click="retryState" class=" receipt mt-3">
           <a>
             Retry Transaction
           </a>
@@ -128,7 +128,16 @@
 </template>
 <script>
 export default {
-  props: ["state", "message", "amount", "ref", "service", "name", "resetState"],
+  props: [
+    "state",
+    "message",
+    "amount",
+    "ref",
+    "service",
+    "name",
+    "resetState",
+    "retryState"
+  ],
   methods: {}
 };
 </script>

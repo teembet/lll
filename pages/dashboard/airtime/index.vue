@@ -5,6 +5,7 @@
       :state="state"
       :message="message"
       :resetState="resetState"
+      :retryState="retryState"
       :ref="ref"
       :amount="amount"
       :service="service"
@@ -142,6 +143,13 @@ export default {
   },
   methods: {
     resetState() {
+      this.status = false;
+      this.form.amount = "";
+      this.form.beneficiaryNumber = "";
+      this.form.pin = "";
+      this.network = undefined;
+    },
+    retryState() {
       this.status = false;
     },
     async runAirtel(formData, local_token) {
@@ -281,14 +289,14 @@ export default {
     onchange(event) {
       this.network = event.target.value;
     },
-    encryptData(data, token) {
+    encryptData(data, key) {
       return this.$CryptoJS.AES.encrypt(
-        JSON.stringify(data),
-        this.$CryptoJS.enc.Utf8.parse(token),
+        data,
+        this.$CryptoJS.enc.Utf8.parse(key),
         {
-          iv: this.$CryptoJS.enc.Utf8.parse(token),
-          mode: this.$CryptoJS.mode.CBC,
-          padding: this.CryptoJS.pad.Pkcs7
+          iv: this.$CryptoJS.enc.Utf8.parse(key),
+          padding: this.$CryptoJS.pad.Pkcs7,
+          mode: this.$CryptoJS.mode.CBC
         }
       ).toString();
     },

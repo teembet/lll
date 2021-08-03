@@ -63,7 +63,7 @@
                 Let's get you started creating a new account
               </h4>
               <div class="form-row ">
-                <div class="col-lg-6 mt-1">
+                <div class="col mt-1">
                   <label class="formlabel" for="formGroupExampleInput"
                     >Username</label
                   >
@@ -76,7 +76,7 @@
                     required
                   />
                 </div>
-                <div class="col-lg-6 mt-1">
+                <div class="col mt-1">
                   <label class="formlabel" for="formGroupExampleInput"
                     >BVN</label
                   >

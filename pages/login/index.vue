@@ -113,10 +113,7 @@ export default {
       password: ""
     };
   },
-  mounted() {
-    console.log(process.env.BASE_URL, "bet");
-    console.log(process.env.baseUrl, "tim");
-  },
+  mounted() {},
   methods: {
     async Login() {
       this.loader = true;

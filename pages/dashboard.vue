@@ -1,5 +1,5 @@
 <template>
-  <div style="padding:20px" v-if="$nuxt.isOnline">
+  <div style="padding:20px">
     <dashboard-nav></dashboard-nav>
 
     <div id="wrapper">
@@ -18,7 +18,8 @@
       </div>
     </div>
   </div>
-  <div v-else>
+  <!-- <div v-else>
+     v-if="$nuxt.isOnline"
     <div class="wrapper-body">
       <div class="wrapper">
         <h1>OFFLINE</h1>
@@ -28,12 +29,13 @@
         </div>
       </div>
     </div>
-  </div>
+  </div> -->
 </template>
 
 <script>
 import dashboardNav from "@/components/dashboardNav";
 import sidenav from "@/components/sidenav";
+
 // import modal from "@/components/modal";
 export default {
   // middleware: "auth",
@@ -51,11 +53,12 @@ export default {
       }
     },
     refresh() {
-      console.log("refreshed");
       this.$nuxt.$loading.start();
       setTimeout(() => this.$nuxt.$loading.finish(), 5000);
-      // this.$nuxt.refresh();
-    }
+      this.$nuxt.refresh();
+    },
+
+  
   }
 };
 </script>

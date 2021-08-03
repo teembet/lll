@@ -87,7 +87,15 @@
           <div class="mt-3">
             <span class="small-text primary-text mt-5">Pay Bills</span>
             <div class="d-flex">
-              <div class="mt-3">
+              <div
+                class="mt-3"
+                @click="
+                  callModal('cable', {
+                    msg: 'Dstv',
+                    img: 'dstv.png'
+                  })
+                "
+              >
                 <div class="icon">
                   <img
                     src="../../../assets/images/dstv.png"
@@ -98,7 +106,15 @@
                   <span class="small-text" style="font-weight:400;">Dstv</span>
                 </div>
               </div>
-              <div class="ml-5 mt-3">
+              <div
+                class="ml-5 mt-3"
+                @click="
+                  callModal('cable', {
+                    msg: 'Gotv',
+                    img: 'gotv.png'
+                  })
+                "
+              >
                 <div class="icon">
                   <img
                     src="../../../assets/images/gotv.png"
@@ -109,7 +125,15 @@
                   <span class="small-text" style="font-weight:400;">GoTV</span>
                 </div>
               </div>
-              <div class="ml-5 mt-3">
+              <div
+                class="ml-5 mt-3"
+                @click="
+                  callModal('cable', {
+                    msg: 'Spectranet',
+                    img: 'spectranet.png'
+                  })
+                "
+              >
                 <div class="icon">
                   <img
                     src="../../../assets/images/spectranet.png"
@@ -122,7 +146,15 @@
                   >
                 </div>
               </div>
-              <div class="ml-5 mt-3">
+              <div
+                class="ml-5 mt-3"
+                @click="
+                  callModal('cable', {
+                    msg: 'Smile',
+                    img: 'smile.png'
+                  })
+                "
+              >
                 <div class="icon">
                   <img
                     src="../../../assets/images/smile.png"
@@ -241,6 +273,10 @@ import { mapGetters } from "vuex";
 import { preventOverflow } from "@popperjs/core";
 import global from "../global.js";
 import paymentcard from "@/components/payment-card";
+import cable from "../bills/cable";
+import electricity from "../bills/electricity";
+import databundle from "../bills/databundle";
+import utility from "../bills/databundle";
 export default {
   name: "home",
   components: {
@@ -271,12 +307,33 @@ export default {
     },
     closeModal() {
       this.isModalVisible = false;
+    },
+    callModal(name, { msg, img }) {
+      switch (name) {
+        case "cable":
+          name = cable;
+          break;
+        case "electricity":
+          name = electricity;
+          break;
+        case "databundle":
+          name = databundle;
+          break;
+        case "utility":
+          name = utility;
+          break;
+      }
+      this.$modal.show(
+        name,
+        { msg: msg, img: img },
+        { adaptive: true, draggable: false, width: "70%", clickToClose: false }
+      );
     }
   }
 };
 </script>
 
-<style scoped>
+<style>
 .main-content {
   padding: 10px;
 }
@@ -361,5 +418,45 @@ export default {
 }
 /* .trans-img {
   width: 20%;
+} */
+.space-between {
+  display: flex;
+  justify-content: space-between;
+}
+.view-more {
+  margin-right: 4rem;
+}
+.vm--modal {
+  position: relative !important;
+  overflow: hidden !important;
+  box-sizing: border-box;
+  background-color: transparent !important;
+  border-radius: 3px !important;
+  box-shadow: none !important;
+  top: 10% !important;
+  left: 20% !important;
+  width: 1075.2px;
+  height: 100% !important;
+  z-index: 1000 !important;
+}
+.vm--container {
+  position: fixed;
+  box-sizing: border-box;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 1001 !important;
+}
+
+/* //.vm--overlay {
+    position: fixed;
+    box-sizing: border-box;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.2);
+    opacity: 1;
 } */
 </style>

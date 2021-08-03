@@ -587,6 +587,20 @@ export default {
   height: 100% !important;
   z-index: 1000 !important;
 }
+/* 
+.vm--modal {
+    position: relative !important;
+    overflow: hidden !important;
+    box-sizing: border-box;
+    background-color: transparent !important;
+    border-radius: 3px !important;
+    box-shadow: none !important;
+    top: 10% !important;
+    left: 20% !important;
+    width: 1075.2px;
+    height: 100% !important;
+    z-index: 1000 !important;
+} */
 .vm--container {
   position: fixed;
   box-sizing: border-box;

@@ -25,14 +25,14 @@
         <div class=" ">
           <div class="col">
             <label class="formlabel" for="formGroupExampleInput"
-              >Phone Number</label
+              >Account Number</label
             >
             <input
               type="text"
               class="form-control"
               id="formGroupExampleInput"
               placeholder=""
-              v-model="form.beneficiaryNumber"
+              v-model="form.beneficiaryAccountNumber"
               @blur="bankLookup"
               autocomplete="off"
               required
@@ -67,8 +67,8 @@
             />
           </div>
         </div>
-        <div class=" ">
-          <!-- <div class="col">
+
+        <!-- <div class="col">
             <label class="formlabel" for="formGroupExampleInput"
               >Select Network</label
             >
@@ -87,19 +87,18 @@
             </select>
           </div> -->
 
-          <div class="col">
-            <label class="formlabel" for="formGroupExampleInput"
-              >Transaction PIN</label
-            >
-            <input
-              type="password"
-              class="form-control"
-              id="formGroupExampleInput"
-              placeholder=""
-              v-model="form.pin"
-              required
-            />
-          </div>
+        <div class="col">
+          <label class="formlabel" for="formGroupExampleInput"
+            >Transaction PIN</label
+          >
+          <input
+            type="password"
+            class="form-control"
+            id="formGroupExampleInput"
+            placeholder=""
+            v-model="form.pin"
+            required
+          />
         </div>
 
         <div class="center mt-5" style="padding:20px">
@@ -135,10 +134,11 @@ export default {
       state: null,
       message: null,
       user: "",
+      url: "",
 
       form: {
         amount: "",
-        beneficiaryNumber: "",
+        beneficiaryAccountNumber: "",
         pin: ""
       }
     };
@@ -153,14 +153,23 @@ export default {
     },
     async accLookup() {
       const formData = {
-        bankCode: this.form.beneficiaryBankCode,
-        accountNumber: this.form.beneficiaryAccountNumber,
-        amount: this.form.amount
+        accountNumber: this.form.beneficiaryAccountNumber
       };
       try {
         this.loader = true;
+        switch (this.msg) {
+          case "Dstv":
+            this.url = "dstv/validation";
+            break;
+          case "Gotv":
+            this.url = "gotv/validation";
+            break;
+          case "Startimes":
+            this.url = "starttimes/validation";
+        }
         const response = await axios().post(
-          process.env.BASE_URL + "paysure/lookup/transfers/accountlookup",
+          process.env.BASE_URL +
+            `paysure/lookup/cabletv/${url}/${this.form.beneficiaryAccountNumber}`,
           formData,
           {
             headers: {
