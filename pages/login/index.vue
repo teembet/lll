@@ -72,7 +72,7 @@
                 </div>
               </div>
               <div class="center">
-                <button type="submit" class="center mt-5 btn-login">
+                <button type="button" class="center mt-5 btn-login">
                   Login
                 </button>
               </div>
@@ -117,48 +117,48 @@ export default {
   methods: {
     async Login() {
       this.loader = true;
-      const local_token = localStorage.getItem("token");
-      if (local_token) {
-        this.$router.push("/dashboard/overview");
-        return;
-      }
-      try {
-        const user = await axios().post(
-          process.env.BASE_URL + "paysure/gettoken",
-          {
-            // "uniqueParameter" : this.email,
-            // "password": this.password
-            uniqueParameter: "TESTSANUSI",
-            password: "PASSWORd@123"
-          }
-        );
-        if (user.data.responseCode === 0) {
-          // const currentUser = JSON.parse(user.data.data)
-          this.loader = false;
-          localStorage.setItem("user", JSON.stringify(user.data.data));
-          localStorage.setItem("token", user.data.data.token);
-          this.$router.push("/dashboard/overview");
-        } else {
-          this.loader = false;
-          this.$toast.open({
-            message: `<p style="color:white;">${user.data.responseMessage}</p>`,
-            type: "error",
-            duration: 5000,
-            dismissible: true,
-            position: "top-right"
-          });
-        }
-      } catch (e) {
-        this.loader = false;
-        this.$toast.open({
-          message: `<p style="color:white;">${e}</p>`,
-          type: "error",
-          duration: 5000,
-          dismissible: true,
-          position: "top-right"
-        });
-        console.log(e);
-      }
+      // const local_token = localStorage.getItem("token");
+      // if (local_token) {
+      //   this.$router.push("/dashboard/overview");
+      //   return;
+      // }
+      // try {
+      //   const user = await axios().post(
+      //     process.env.BASE_URL + "paysure/gettoken",
+      //     {
+      //       // "uniqueParameter" : this.email,
+      //       // "password": this.password
+      //       uniqueParameter: "TESTSANUSI",
+      //       password: "PASSWORd@123"
+      //     }
+      //   );
+      //   if (user.data.responseCode === 0) {
+      //     // const currentUser = JSON.parse(user.data.data)
+      //     this.loader = false;
+      //     localStorage.setItem("user", JSON.stringify(user.data.data));
+      //     localStorage.setItem("token", user.data.data.token);
+      //     this.$router.push("/dashboard/overview");
+      //   } else {
+      //     this.loader = false;
+      //     this.$toast.open({
+      //       message: `<p style="color:white;">${user.data.responseMessage}</p>`,
+      //       type: "error",
+      //       duration: 5000,
+      //       dismissible: true,
+      //       position: "top-right"
+      //     });
+      //   }
+      // } catch (e) {
+      //   this.loader = false;
+      //   this.$toast.open({
+      //     message: `<p style="color:white;">${e}</p>`,
+      //     type: "error",
+      //     duration: 5000,
+      //     dismissible: true,
+      //     position: "top-right"
+      //   });
+      //   console.log(e);
+      // }
     }
   }
 };
