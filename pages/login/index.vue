@@ -3,27 +3,32 @@
     <Loader v-show="loader" />
     <div class="login-block">
       <div class="row">
+          <div class="col-lg-7">
+
+     
         <nuxt-link to="/">
+      
           <img class="img-abs" src="../../assets/images/paysure_White.png" />
         </nuxt-link>
 
         <div
           id="carouselExampleIndicators"
-          class="carousel slide col-lg-7"
+          class="carousel slide"
           data-ride="carousel"
         >
           <no-ssr>
             <!-- important to add no-ssr-->
 
             <carousel :autoplay="true" :nav="true" :items="1">
-              <img src="../../assets/images/caro1.png" />
+              <!-- <img src="../../assets/images/caro1.png" />
 
-              <img src="../../assets/images/1stpic.png" />
-              <img src="../../assets/images/2ndpic.png" />
+              <img src="../../assets/images/1stpic.png" /> -->
+              <img src="../../assets/images/2ndpic.png" style="height:100vh !important" />
             </carousel>
           </no-ssr>
         </div>
-        <div class="col-lg-5" style="overflow:auto">
+           </div>
+        <div class="col-lg-5" style="overflow:auto;height:100vh">
           <div class="container resize">
             <form @submit.prevent="Login">
               <h1 class="title">Welcome Back!</h1>

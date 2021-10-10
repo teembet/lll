@@ -10,7 +10,7 @@
         <div class="row " style="align-items:center">
           <div class="col-lg-5 col-sm-12">
             <h1>
-              Easy Payment!
+              Easy Payments!
             </h1>
             <p class="mt-3">
               Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam

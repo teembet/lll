@@ -2,62 +2,34 @@
   <div>
     <Loader v-show="loader" />
     <div class="login-block">
+   
+
+    
       <div class="row">
+           <div class="col-lg-5">
         <nuxt-link to="/">
           <img class="img-abs" src="../../assets/images/paysure_White.png" />
         </nuxt-link>
 
         <div
           id="carouselExampleIndicators"
-          class="carousel slide col-lg-6"
+          class="carousel slide"
           data-ride="carousel"
         >
           <no-ssr>
             <!-- important to add no-ssr-->
 
             <carousel :autoplay="true" :nav="true" :items="1">
-              <img src="../../assets/images/caro1.png" />
+              <img src="../../assets/images/2ndpic.png" style="height:100vh !important" />
 
-              <img src="../../assets/images/1stpic.png" />
-              <img src="../../assets/images/2ndpic.png" />
             </carousel>
           </no-ssr>
-          <!-- <ol class="carousel-indicators">
-            <li
-              data-target="#carouselExampleIndicators"
-              data-slide-to="0"
-              class="active"
-            ></li>
-            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-          </ol> -->
-          <!-- <div class="carousel-inner">
-            <div class="carousel-item active">
-              <img
-                class="d-block w-100"
-                src="../../assets/images/first-picture.png"
-                alt="First slide"
-              />
-            </div>
-            <div class="carousel-item">
-              <img
-                class="d-block w-100"
-                src="../../assets/images/cart.png"
-                alt="Second slide"
-              />
-            </div>
-            <div class="carousel-item">
-              <img
-                class="d-block w-100"
-                src="../../assets/images/wallet.png"
-                alt="Third slide"
-              />
-            </div>
-          </div> -->
+      
         </div>
-        <div class="col-lg-6" style="overflow:scroll">
+          </div>
+        <div class="col-lg-7" style="overflow:scroll">
           <div class="container resize">
-            <form @submit.prevent="sendRequest">
+            <form>
               <h1 class="title" style="font-size:35px">Get Started!</h1>
               <h4 class="title-2">
                 Let's get you started creating a new account
@@ -229,7 +201,7 @@
               </div>
 
               <div class="center mt-3">
-                <button tag="button" type="submit" class="btn-login">
+                <button tag="button"  class="btn-login">
                   Create Account
                 </button>
               </div>
